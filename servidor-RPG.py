@@ -62,8 +62,6 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 serv = (HOST, PORT)
 sock.bind(serv)
 mutex = threading.Semaphore(1)
-t1 = threading.Thread()
-t1.start()
 while True:
     try:
         msg, jogador = sock.recvfrom(TAM_MSG)
