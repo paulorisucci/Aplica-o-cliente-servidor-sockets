@@ -10,13 +10,10 @@ PORT = 40000
 
 def decode_cmd_user(cmd_user):
     cmd_map = {'F': 'FIGHT', 'E': 'EXIT'}
-
     if cmd_user.upper() in cmd_map:
         cmd_user = cmd_map[cmd_user.upper()]
-
     elif cmd_user.upper() in cmd_map.values():
         cmd_user = cmd_user.upper()
-
     else:
         return False
 
@@ -103,7 +100,7 @@ while True:
             looser = convert_str_creature(result[1])
             message = result[2]
 
-            print(message)
+            print('\033[0;31;40m',message,'\033[m')
 
             if winner.name == player.name:
                 player = winner
@@ -119,7 +116,6 @@ while True:
                 break
 
     elif cmd_player == 'EXIT':
-
         cmd = f'{player}\n{cmd_player}'
         sock.sendto(str.encode(cmd), serv)
         result = sock.recvfrom(TAM_MSG)
