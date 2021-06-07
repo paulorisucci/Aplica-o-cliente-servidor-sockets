@@ -100,7 +100,7 @@ while True:
             looser = convert_str_creature(result[1])
             message = result[2]
 
-            print('\033[0;31;40m',message,'\033[m')
+            print(message)
 
             if winner.name == player.name:
                 player = winner

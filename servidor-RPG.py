@@ -39,7 +39,7 @@ def processa_msg_jogador(message, jogador):
         if highscore_content == '':
             highscore = open('highscore.txt', 'w')
             highscore.write(f'{player_atual}')
-            message = f'Você foi o primeiro player a jogar. Seu score foi registrado como recorde atual:\n{player_atual}'
+            message = f'Você foi o primeiro player a jogar. Seu score foi registrado como recorde atual:\n{player_atual.presentation()}'
 
         else:
             best_player = convert_str_creature(highscore_content)
